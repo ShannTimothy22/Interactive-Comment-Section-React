@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Comment from "./components/comment";
+import profile from "./images/avatars/image-juliusomo.png";
 
 function App() {
   return (
@@ -8,10 +9,18 @@ function App() {
         <Comment></Comment>
       </div>
       <div className="user-container">
-        <img src="" alt="profile" />
-        <form>
-          <textarea name="" id="" cols="30" rows="10"></textarea>
-          <button>Send</button>
+        <form className="grid-container grid-container--form form">
+          <img className="profile" src={profile} alt="profile" />
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="Add a comment..."
+          ></textarea>
+          <button type="submit" className="btn">
+            send
+          </button>
         </form>
       </div>
     </section>

@@ -13,4 +13,124 @@ body {
   font-family: "Rubik", sans-serif;
   font-size: 16;
   background-color: hsl(228deg, 33%, 97%);
+}
+
+.app {
+  margin: 5rem;
+  display: grid;
+  place-items: center;
+}
+.app .grid-container {
+  display: grid;
+  padding-inline: 1rem;
+}
+.app .grid-container--form {
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-areas: ". comment comment ." ". image button .";
+}
+.app .grid-container--comment {
+  grid-template-areas: "info info" "comment comment" "score button";
+}
+.app .main-container {
+  margin-block: 2rem;
+}
+.app .main-container .comment-container .info {
+  grid-area: info;
+  display: flex;
+  place-items: center;
+  margin-block: 1rem;
+  gap: 3rem;
+}
+.app .main-container .comment-container .info img {
+  max-width: 3rem;
+}
+.app .main-container .comment-container .info h1 {
+  font-family: inherit;
+  font-weight: 500;
+}
+.app .main-container .comment-container .info h2 {
+  font-weight: 400;
+  color: hsl(211deg, 10%, 45%);
+}
+.app .main-container .comment-container .score {
+  grid-area: score;
+  display: flex;
+  color: hsl(238deg, 40%, 52%);
+  font-size: 24px;
+  font-weight: 500;
+}
+.app .main-container .comment-container .score span {
+  display: flex;
+  place-items: center;
+  padding: 1rem;
+}
+.app .main-container .comment-container .score span img {
+  min-width: 18px;
+}
+.app .main-container .comment-container .comment {
+  grid-area: comment;
+  margin-bottom: 1rem;
+}
+.app .main-container .comment-container .comment p {
+  color: hsl(211deg, 10%, 45%);
+  line-height: 1.75rem;
+  font-size: 18px;
+}
+.app .main-container .comment-container .button {
+  grid-area: button;
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+.app .main-container .comment-container .button span img {
+  min-width: 20px;
+}
+.app .main-container .comment-container .button button {
+  border: none;
+  display: flex;
+  padding: 1rem;
+  font-size: 18px;
+  place-items: center;
+  gap: 1rem;
+  color: hsl(238deg, 40%, 52%);
+  font-weight: 700;
+}
+.app .user-container {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  padding: 1rem;
+}
+.app .user-container .form {
+  gap: 1rem;
+  padding: 1rem;
+}
+.app .user-container .form .profile {
+  -o-object-fit: contain;
+     object-fit: contain;
+  grid-area: image;
+}
+.app .user-container .form textarea {
+  border-radius: 10px;
+  padding: 1rem;
+  border: none;
+  resize: none;
+  grid-area: comment;
+}
+.app .user-container .form textarea:focus {
+  border: 0.5px solid hsl(212deg, 24%, 26%);
+}
+.app .user-container .form button {
+  max-width: 10rem;
+  padding: 1.25rem 3rem;
+  place-self: end;
+  border: none;
+  border-radius: 10px;
+  background-color: hsl(238deg, 40%, 52%);
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: inherit;
+  text-transform: uppercase;
+  grid-area: button;
 }/*# sourceMappingURL=index.css.map */

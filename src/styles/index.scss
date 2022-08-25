@@ -1,1 +1,152 @@
 @import "./scss/global";
+
+.app {
+  margin: 5rem;
+  display: grid;
+  place-items: center;
+
+  .grid-container {
+    display: grid;
+    padding-inline: 1rem;
+
+    //border: 1px solid black;
+  }
+
+  .grid-container--form {
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-areas:
+      ". comment comment ."
+      ". image button .";
+  }
+
+  .grid-container--comment {
+    grid-template-areas:
+      "info info"
+      "comment comment"
+      "score button";
+  }
+
+  .main-container {
+    margin-block: 2rem;
+
+    .comment-container {
+      //background-color: lightcoral;
+
+      .info {
+        grid-area: info;
+        display: flex;
+        place-items: center;
+        margin-block: 1rem;
+        gap: 3rem;
+
+        img {
+          max-width: 3rem;
+        }
+
+        h1 {
+          font-family: inherit;
+          font-weight: 500;
+        }
+
+        h2 {
+          font-weight: 400;
+          color: $Grayish-Blue;
+        }
+      }
+
+      .score {
+        grid-area: score;
+        //border: 1px solid black;
+        display: flex;
+
+        color: $Moderate-blue;
+        font-size: 24px;
+        font-weight: 500;
+        span {
+          display: flex;
+          place-items: center;
+          padding: 1rem;
+          img {
+            min-width: 18px;
+          }
+          //border: 1px solid green;
+        }
+      }
+
+      .comment {
+        grid-area: comment;
+        margin-bottom: 1rem;
+        p {
+          color: $Grayish-Blue;
+          line-height: 1.75rem;
+          font-size: 18px;
+        }
+      }
+
+      .button {
+        grid-area: button;
+        display: flex;
+        justify-content: end;
+        gap: 1rem;
+        span {
+          img {
+            min-width: 20px;
+          }
+        }
+
+        button {
+          border: none;
+          display: flex;
+          padding: 1rem;
+          font-size: 18px;
+          place-items: center;
+          gap: 1rem;
+          color: $Moderate-blue;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .user-container {
+    position: absolute;
+    bottom: 0%;
+    //background-color: lightcoral;
+    width: 100%;
+    padding: 1rem;
+
+    .form {
+      gap: 1rem;
+      padding: 1rem;
+      .profile {
+        object-fit: contain;
+        grid-area: image;
+      }
+
+      textarea {
+        border-radius: 10px;
+        padding: 1rem;
+        border: none;
+        resize: none;
+        grid-area: comment;
+      }
+      textarea:focus {
+        border: 0.5px solid $Dark-blue;
+      }
+      button {
+        max-width: 10rem;
+        padding: 1.25rem 3rem;
+        place-self: end;
+        border: none;
+        border-radius: 10px;
+        background-color: $Moderate-blue;
+        color: white;
+        font-size: 16px;
+        font-weight: 400;
+        font-family: inherit;
+        text-transform: uppercase;
+        grid-area: button;
+      }
+    }
+  }
+}
