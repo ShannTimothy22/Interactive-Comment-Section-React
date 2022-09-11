@@ -1,55 +1,63 @@
 @import "./scss/global";
 
 .app {
-  margin: 5rem;
-  display: grid;
-  place-items: center;
+  margin: 1rem;
+  //border: 1px solid black;
+  padding: 1rem;
 
   .grid-container {
     display: grid;
-    padding-inline: 1rem;
-
     //border: 1px solid black;
   }
 
   .grid-container--form {
-    grid-template-columns: 1fr 2fr 2fr 1fr;
     grid-template-areas:
-      ". comment comment ."
-      ". image button .";
+      "alert alert"
+      "comment comment"
+      "image button";
   }
 
   .grid-container--comment {
     grid-template-areas:
       "info info"
       "comment comment"
-      "score button";
+      "score button"
+      "form form";
   }
 
   .main-container {
     margin-block: 2rem;
 
     .comment-container {
-      //background-color: lightcoral;
+      background-color: white;
+      margin-bottom: 3rem;
+      padding: 1rem;
+      border-radius: 15px;
 
       .info {
         grid-area: info;
         display: flex;
         place-items: center;
         margin-block: 1rem;
-        gap: 3rem;
+        gap: 1rem;
+        font-size: 16px;
 
-        img {
-          max-width: 3rem;
+        .profile-pic {
+          width: 50px;
+          height: 50px;
+          background-size: cover;
+          border-radius: 50%;
         }
 
         h1 {
           font-family: inherit;
           font-weight: 500;
+          font-size: 16px;
         }
 
         h2 {
           font-weight: 400;
+          font-size: 16px;
           color: $Grayish-Blue;
         }
       }
@@ -58,18 +66,17 @@
         grid-area: score;
         //border: 1px solid black;
         display: flex;
-
+        place-items: center;
         color: $Moderate-blue;
-        font-size: 24px;
+        font-size: 16px;
         font-weight: 500;
-        span {
+        gap: 1rem;
+        .score-btn {
+          background: none;
+          border: none;
           display: flex;
           place-items: center;
           padding: 1rem;
-          img {
-            min-width: 18px;
-          }
-          //border: 1px solid green;
         }
       }
 
@@ -79,7 +86,7 @@
         p {
           color: $Grayish-Blue;
           line-height: 1.75rem;
-          font-size: 18px;
+          font-size: 16px;
         }
       }
 
@@ -88,17 +95,13 @@
         display: flex;
         justify-content: end;
         gap: 1rem;
-        span {
-          img {
-            min-width: 20px;
-          }
-        }
 
         button {
+          background: none;
           border: none;
           display: flex;
           padding: 1rem;
-          font-size: 18px;
+          font-size: 16px;
           place-items: center;
           gap: 1rem;
           color: $Moderate-blue;
@@ -106,20 +109,80 @@
         }
       }
     }
+
+    .modal-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .modal-content {
+        background-color: white;
+        width: clamp(10rem, 60vh, 24rem);
+        padding: 2rem;
+        border-radius: 12px;
+
+        .header {
+          margin-bottom: 1rem;
+          font-size: 18px;
+        }
+
+        .content {
+          margin-bottom: 1rem;
+          line-height: 1.5;
+          color: $Grayish-Blue;
+        }
+
+        .button-container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1rem;
+
+          .cancel {
+            padding: 1rem;
+            border: none;
+            text-transform: uppercase;
+            border-radius: 10px;
+            background-color: $Grayish-Blue;
+            letter-spacing: 0.1rem;
+            color: white;
+          }
+          .delete {
+            padding: 1rem;
+            border: none;
+            text-transform: uppercase;
+            border-radius: 10px;
+            background-color: $Soft-Red;
+            letter-spacing: 0.1rem;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .reply-container {
+    padding-left: 3rem;
+    border-left: 1px solid $Grayish-Blue;
   }
 
   .user-container {
-    position: absolute;
-    bottom: 0%;
     //background-color: lightcoral;
-    width: 100%;
-    padding: 1rem;
-
+    min-width: 100%;
+    grid-area: form;
     .form {
       gap: 1rem;
       padding: 1rem;
+
       .profile {
         object-fit: contain;
+        max-width: 35%;
+        margin-block: auto;
         grid-area: image;
       }
 
@@ -134,8 +197,7 @@
         border: 0.5px solid $Dark-blue;
       }
       button {
-        max-width: 10rem;
-        padding: 1.25rem 3rem;
+        padding: 0.75rem 2rem;
         place-self: end;
         border: none;
         border-radius: 10px;
@@ -149,4 +211,29 @@
       }
     }
   }
+}
+
+.amyrobson {
+  background: url(../images/avatars/image-amyrobson.png);
+}
+
+.maxblagun {
+  background: url(../images/avatars/image-maxblagun.png);
+}
+
+.ramsesmiron {
+  background: url(../images/avatars/image-ramsesmiron.png);
+}
+
+.juliusomo {
+  background: url(../images/avatars/image-juliusomo.png);
+}
+
+.display--none {
+  display: none !important;
+}
+
+.alert {
+  grid-area: alert;
+  color: red;
 }
