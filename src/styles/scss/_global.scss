@@ -28,3 +28,27 @@ body {
 button {
   cursor: pointer;
 }
+
+@mixin small {
+  @media (max-width: 490px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin x-large {
+  @media (min-width: 1680px) {
+    @content;
+  }
+}

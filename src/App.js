@@ -17,6 +17,7 @@ function App() {
   useEffect(() => {
     getData();
   }, []);
+
   // useEffect(() => {
   //   if (comment) {
   //     setComment(JSON.parse(localStorage.getItem("comment")));
@@ -131,116 +132,6 @@ function App() {
       </div>
     </section>
   );
-}
-{
-  /* {comment.map((item) => {
-          //console.log(item)
-          return (
-            <div
-              key={item.id}
-              className="grid-container grid-container--comment comment-container"
-            >
-              <div className="score">
-                <span>
-                  <img src={plus} alt="plus" />
-                </span>
-                <span>{item.score}</span>
-                <span>
-                  <img src={minus} alt="minus" />
-                </span>
-              </div>
-              <div className="button">
-                <button onClick={handleReply}>
-                  <span>
-                    <img src={replys} alt="reply" />
-                  </span>
-                  <h3>Reply</h3>
-                </button>
-              </div>
-              <div className="info">
-                <img src={profile} alt="comment-pic" />
-                <h1>amyrobson</h1>
-                <h2>1 month ago</h2>
-              </div>
-              <div className="comment">
-                <p>{item.comments}</p>
-              </div>
-              {item.replies.map((item) => {
-                console.log(item);
-                return (
-                  <div
-                    key={item.id}
-                    className="grid-container grid-container--comment comment-container"
-                  >
-                    <div className="score">
-                      <span>
-                        <img src={plus} alt="plus" />
-                      </span>
-                      <span>{item.score}</span>
-                      <span>
-                        <img src={minus} alt="minus" />
-                      </span>
-                    </div>
-                    <div className="info">
-                      <img src={profile} alt="comment-pic" />
-                      <h1>amyrobson</h1>
-                      <h2>1 month ago</h2>
-                    </div>
-                    <div className="comment">
-                      <p>{item.replies}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          );
-        })}
-        {isReply && (
-          <div className="user-container">
-            <form
-              className="grid-container grid-container--form form"
-              onSubmit={handleSubmitReply}
-            >
-              <img className="profile" src={profile} alt="profile" />
-              <textarea
-                name=""
-                id=""
-                cols="30"
-                rows="10"
-                placeholder="Add a comment..."
-                value={replies}
-                onChange={(e) => {
-                  setReply(e.target.value);
-                }}
-              ></textarea>
-              <button type="submit" className="btn">
-                reply
-              </button>
-            </form>
-          </div>
-        )}
-      </div>
-      <div className="user-container">
-        <form
-          className="grid-container grid-container--form form"
-          onSubmit={handleSubmit}
-        >
-          <img className="profile" src={profile} alt="profile" />
-          <textarea
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-            placeholder="Add a comment..."
-            value={comments}
-            onChange={(e) => {
-              setComment(e.target.value);
-            }}
-          ></textarea>
-          <button type="submit" className="btn">
-            send
-          </button>
-        </form> */
 }
 
 export default App;

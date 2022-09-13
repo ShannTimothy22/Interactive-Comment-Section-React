@@ -4,6 +4,17 @@
   margin: 1rem;
   //border: 1px solid black;
   padding: 1rem;
+  @include medium {
+    margin-inline: 5vh;
+  }
+
+  @include large {
+    margin-inline: 15vh;
+  }
+
+  @include x-large {
+    margin-inline: 35vh;
+  }
 
   .grid-container {
     display: grid;
@@ -33,6 +44,9 @@
       margin-bottom: 3rem;
       padding: 1rem;
       border-radius: 15px;
+      @include large {
+        padding: 2rem;
+      }
 
       .info {
         grid-area: info;
@@ -41,24 +55,64 @@
         margin-block: 1rem;
         gap: 1rem;
         font-size: 16px;
+        @include medium {
+          gap: 2rem;
+        }
+        @include large {
+          font-size: 24px;
+          margin-bottom: 1.5rem;
+        }
 
         .profile-pic {
           width: 50px;
           height: 50px;
           background-size: cover;
           border-radius: 50%;
+          @include small {
+            width: 35px;
+            height: 35px;
+          }
+          @include large {
+            width: 65px;
+            height: 65px;
+          }
         }
 
         h1 {
           font-family: inherit;
           font-weight: 500;
-          font-size: 16px;
+          font-size: 18px;
+          @include small {
+            font-size: 12px;
+          }
+          @include large {
+            font-size: 24px;
+          }
+        }
+        .user-indicator {
+          background-color: $Moderate-blue;
+          color: white;
+          padding: 0.4rem 0.75rem;
+          border-radius: 5px;
+          @include small {
+            font-size: 11px;
+            padding: 0.2rem 0.5rem;
+          }
+          @include large {
+            font-size: 24px;
+          }
         }
 
         h2 {
           font-weight: 400;
-          font-size: 16px;
+          font-size: 18px;
           color: $Grayish-Blue;
+          @include small {
+            font-size: 11px;
+          }
+          @include large {
+            font-size: 24px;
+          }
         }
       }
 
@@ -68,15 +122,27 @@
         display: flex;
         place-items: center;
         color: $Moderate-blue;
-        font-size: 16px;
+        font-size: 20px;
         font-weight: 500;
         gap: 1rem;
+
+        @include small {
+          gap: 0.3rem;
+        }
+
+        @include large {
+          font-size: 24px;
+        }
+
         .score-btn {
           background: none;
           border: none;
           display: flex;
           place-items: center;
           padding: 1rem;
+          @include small {
+            padding: 0.6rem;
+          }
         }
       }
 
@@ -87,6 +153,14 @@
           color: $Grayish-Blue;
           line-height: 1.75rem;
           font-size: 16px;
+          @include small {
+            font-size: 15px;
+          }
+          @include large {
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+            font-size: 24px;
+          }
         }
       }
 
@@ -95,6 +169,10 @@
         display: flex;
         justify-content: end;
         gap: 1rem;
+
+        @include small {
+          gap: 0rem;
+        }
 
         button {
           background: none;
@@ -106,6 +184,18 @@
           gap: 1rem;
           color: $Moderate-blue;
           font-weight: 700;
+
+          @include small {
+            font-size: 12px;
+            gap: 0.5rem;
+          }
+          @include large {
+            font-size: 24px;
+            img {
+              width: 20px;
+              height: 20px;
+            }
+          }
         }
       }
     }
@@ -167,8 +257,12 @@
   }
 
   .reply-container {
-    padding-left: 3rem;
-    border-left: 1px solid $Grayish-Blue;
+    padding-left: 1rem;
+    border-left: 1px solid $Light-grayish-blue;
+    @include large {
+      margin-left: 2rem;
+      padding-left: 2rem;
+    }
   }
 
   .user-container {

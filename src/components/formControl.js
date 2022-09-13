@@ -5,6 +5,7 @@ import Alert from "./alert";
 const FormControl = ({ addComment, type, replyingTo }) => {
   const [comment, setComment] = useState("");
   const [alert, setAlert] = useState(false);
+  const replyTo = replyingTo ? `@${replyingTo}, ` : "";
 
   const removeAlert = () => {
     setAlert(false);
@@ -18,7 +19,7 @@ const FormControl = ({ addComment, type, replyingTo }) => {
     } else {
       const newComment = {
         id: new Date().getTime().toString(),
-        content: comment,
+        content: replyTo + comment,
         createdAt: new Date(),
         score: 0,
         username: "juliusomo",

@@ -145,6 +145,7 @@ const Comment = ({
         <div className="info">
           <div className={`profile-pic ${comments.username}`}></div>
           <h1>{comments.username}</h1>
+          {comments.currentUser && <p className="user-indicator">you</p>}
           <h2>{`${time} ago`}</h2>
         </div>
         <div className="comment">
@@ -172,10 +173,11 @@ const Comment = ({
         <FormControl
           addComment={updateReply}
           type="reply"
-          replyingTo={comments.username}
           time={time}
+          replyingTo={comments.username}
         ></FormControl>
       )}
+
       {comments.replies !== [] && (
         <ReplyContainer
           key={comments.replies.id}

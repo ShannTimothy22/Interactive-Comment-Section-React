@@ -22,6 +22,7 @@ const Reply = ({
   const [isEditing, setIsEditing] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
   //console.log(comments);
+  //console.log(comments.replyingTo);
 
   const createdAt = new Date(comments.createdAt);
   const now = new Date();
@@ -138,6 +139,7 @@ const Reply = ({
         <div className="info">
           <div className={`profile-pic ${comments.username}`}></div>
           <h1>{comments.username}</h1>
+          {comments.currentUser && <p className="user-indicator">you</p>}
           <h2>{`${time} ago`}</h2>
         </div>
         <div className="comment">
@@ -157,7 +159,10 @@ const Reply = ({
               </form>
             </div>
           ) : (
-            <p>{comments.content}</p>
+            <p>
+              {comments.replyingTo ? `@${comments.replyingTo}, ` : ""}
+              {comments.content}
+            </p>
           )}
         </div>
       </div>

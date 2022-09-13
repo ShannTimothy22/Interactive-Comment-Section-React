@@ -23,6 +23,21 @@ button {
   margin: 1rem;
   padding: 1rem;
 }
+@media (min-width: 768px) {
+  .app {
+    margin-inline: 5vh;
+  }
+}
+@media (min-width: 1440px) {
+  .app {
+    margin-inline: 15vh;
+  }
+}
+@media (min-width: 1680px) {
+  .app {
+    margin-inline: 35vh;
+  }
+}
 .app .grid-container {
   display: grid;
 }
@@ -41,6 +56,11 @@ button {
   padding: 1rem;
   border-radius: 15px;
 }
+@media (min-width: 1440px) {
+  .app .main-container .comment-container {
+    padding: 2rem;
+  }
+}
 .app .main-container .comment-container .info {
   grid-area: info;
   display: flex;
@@ -49,30 +69,100 @@ button {
   gap: 1rem;
   font-size: 16px;
 }
+@media (min-width: 768px) {
+  .app .main-container .comment-container .info {
+    gap: 2rem;
+  }
+}
+@media (min-width: 1440px) {
+  .app .main-container .comment-container .info {
+    font-size: 24px;
+    margin-bottom: 1.5rem;
+  }
+}
 .app .main-container .comment-container .info .profile-pic {
   width: 50px;
   height: 50px;
   background-size: cover;
   border-radius: 50%;
 }
+@media (max-width: 490px) {
+  .app .main-container .comment-container .info .profile-pic {
+    width: 35px;
+    height: 35px;
+  }
+}
+@media (min-width: 1440px) {
+  .app .main-container .comment-container .info .profile-pic {
+    width: 65px;
+    height: 65px;
+  }
+}
 .app .main-container .comment-container .info h1 {
   font-family: inherit;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
+}
+@media (max-width: 490px) {
+  .app .main-container .comment-container .info h1 {
+    font-size: 12px;
+  }
+}
+@media (min-width: 1440px) {
+  .app .main-container .comment-container .info h1 {
+    font-size: 24px;
+  }
+}
+.app .main-container .comment-container .info .user-indicator {
+  background-color: hsl(238deg, 40%, 52%);
+  color: white;
+  padding: 0.4rem 0.75rem;
+  border-radius: 5px;
+}
+@media (max-width: 490px) {
+  .app .main-container .comment-container .info .user-indicator {
+    font-size: 11px;
+    padding: 0.2rem 0.5rem;
+  }
+}
+@media (min-width: 1440px) {
+  .app .main-container .comment-container .info .user-indicator {
+    font-size: 24px;
+  }
 }
 .app .main-container .comment-container .info h2 {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
   color: hsl(211deg, 10%, 45%);
+}
+@media (max-width: 490px) {
+  .app .main-container .comment-container .info h2 {
+    font-size: 11px;
+  }
+}
+@media (min-width: 1440px) {
+  .app .main-container .comment-container .info h2 {
+    font-size: 24px;
+  }
 }
 .app .main-container .comment-container .score {
   grid-area: score;
   display: flex;
   place-items: center;
   color: hsl(238deg, 40%, 52%);
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
   gap: 1rem;
+}
+@media (max-width: 490px) {
+  .app .main-container .comment-container .score {
+    gap: 0.3rem;
+  }
+}
+@media (min-width: 1440px) {
+  .app .main-container .comment-container .score {
+    font-size: 24px;
+  }
 }
 .app .main-container .comment-container .score .score-btn {
   background: none;
@@ -80,6 +170,11 @@ button {
   display: flex;
   place-items: center;
   padding: 1rem;
+}
+@media (max-width: 490px) {
+  .app .main-container .comment-container .score .score-btn {
+    padding: 0.6rem;
+  }
 }
 .app .main-container .comment-container .comment {
   grid-area: comment;
@@ -90,11 +185,28 @@ button {
   line-height: 1.75rem;
   font-size: 16px;
 }
+@media (max-width: 490px) {
+  .app .main-container .comment-container .comment p {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1440px) {
+  .app .main-container .comment-container .comment p {
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    font-size: 24px;
+  }
+}
 .app .main-container .comment-container .button {
   grid-area: button;
   display: flex;
   justify-content: end;
   gap: 1rem;
+}
+@media (max-width: 490px) {
+  .app .main-container .comment-container .button {
+    gap: 0rem;
+  }
 }
 .app .main-container .comment-container .button button {
   background: none;
@@ -106,6 +218,21 @@ button {
   gap: 1rem;
   color: hsl(238deg, 40%, 52%);
   font-weight: 700;
+}
+@media (max-width: 490px) {
+  .app .main-container .comment-container .button button {
+    font-size: 12px;
+    gap: 0.5rem;
+  }
+}
+@media (min-width: 1440px) {
+  .app .main-container .comment-container .button button {
+    font-size: 24px;
+  }
+  .app .main-container .comment-container .button button img {
+    width: 20px;
+    height: 20px;
+  }
 }
 .app .main-container .modal-wrapper {
   position: fixed;
@@ -157,8 +284,14 @@ button {
   color: white;
 }
 .app .reply-container {
-  padding-left: 3rem;
-  border-left: 1px solid hsl(211deg, 10%, 45%);
+  padding-left: 1rem;
+  border-left: 1px solid hsl(239deg, 57%, 85%);
+}
+@media (min-width: 1440px) {
+  .app .reply-container {
+    margin-left: 2rem;
+    padding-left: 2rem;
+  }
 }
 .app .user-container {
   min-width: 100%;
