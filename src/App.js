@@ -2,8 +2,17 @@ import React, { useState, useContext, useReducer, useEffect } from "react";
 import Comment from "./components/comment";
 import FormControl from "./components/formControl";
 
+const getLocalStorage = () => {
+  let comment = localStorage.getItem("comment");
+  if (comment.length > 0) {
+    return JSON.parse(localStorage.getItem("comment"));
+  } else {
+    return [];
+  }
+};
+
 function App() {
-  const [comment, setComment] = useState([]);
+  const [comment, setComment] = useState(getLocalStorage());
   const [currentUser, setCurrentUser] = useState([]);
 
   const getData = async () => {
@@ -14,23 +23,19 @@ function App() {
     //console.log(currentUser);
   };
 
-  useEffect(() => {
-    getData();
-  }, []);
-
   // useEffect(() => {
-  //   if (comment) {
+  //   if (comment.length > 0) {
   //     setComment(JSON.parse(localStorage.getItem("comment")));
-  //     //console.log(comment);
   //   } else {
+  //     //console.log(comment.length);
   //     getData();
   //   }
   // }, []);
 
-  // useEffect(() => {
-  //   localStorage.setItem("commentsa", JSON.stringify(comment));
-  //   //console.log(comment);
-  // }, [comment]);
+  useEffect(() => {
+    localStorage.setItem("comment", JSON.stringify(comment));
+    console.log(comment);
+  }, [comment]);
 
   const updateScore = (id, score, type) => {
     let newComment = [...comment];
