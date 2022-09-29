@@ -1,18 +1,28 @@
-import React, { useState, useContext, useReducer, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Comment from "./components/comment";
 import FormControl from "./components/formControl";
 
-const getLocalStorage = () => {
-  let comment = localStorage.getItem("comment");
-  if (comment.length > 0) {
-    return JSON.parse(localStorage.getItem("comment"));
-  } else {
-    return [];
-  }
-};
-
 function App() {
-  const [comment, setComment] = useState(getLocalStorage());
+  // const getData = async () => {
+  //   const resp = await fetch("./data.json");
+  //   const data = await resp.json();
+  //   window.datas = data.comments;
+  // };
+  // useEffect(() => {
+  //   getData();
+  // }, []);
+  // const getLocalStorage = () => {
+  //   let comment = localStorage.getItem("comment");
+  //   if (comment.length > 0) {
+  //     return JSON.parse(localStorage.getItem("comment"));
+  //   } else {
+  //     return window.datas;
+  //   }
+  // };
+
+  const [comment, setComment] = useState(
+    JSON.parse(localStorage.getItem("comment")) ?? []
+  );
   const [currentUser, setCurrentUser] = useState([]);
 
   const getData = async () => {
@@ -20,21 +30,20 @@ function App() {
     const data = await resp.json();
     setComment(data.comments);
     setCurrentUser(data.currentUser);
+    //console.log(data.comments);
     //console.log(currentUser);
   };
 
-  // useEffect(() => {
-  //   if (comment.length > 0) {
-  //     setComment(JSON.parse(localStorage.getItem("comment")));
-  //   } else {
-  //     //console.log(comment.length);
-  //     getData();
-  //   }
-  // }, []);
+  //console.log(comment);
+
+  useEffect(() => {
+    if (comment.length === 0) {
+      getData();
+    }
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("comment", JSON.stringify(comment));
-    console.log(comment);
   }, [comment]);
 
   const updateScore = (id, score, type) => {
@@ -75,7 +84,7 @@ function App() {
     let newComment = [...comment];
     if (type === "comment") {
       newComment.forEach((item) => {
-        if (item.id == id) {
+        if (item.id === id) {
           item.content = content;
         }
       });
