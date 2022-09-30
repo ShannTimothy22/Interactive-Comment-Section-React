@@ -30,12 +30,12 @@ button {
 }
 @media (min-width: 1440px) {
   .app {
-    margin-inline: 15vh;
+    margin-inline: 25vh;
   }
 }
 @media (min-width: 1680px) {
   .app {
-    margin-inline: 55vh;
+    margin-inline: 45vh;
   }
 }
 .app .grid-container {
