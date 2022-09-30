@@ -35,7 +35,7 @@ button {
 }
 @media (min-width: 1680px) {
   .app {
-    margin-inline: 45vh;
+    margin-inline: 55vh;
   }
 }
 .app .grid-container {

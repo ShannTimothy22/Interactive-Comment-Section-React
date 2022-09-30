@@ -2,7 +2,6 @@
 
 .app {
   margin: 1rem;
-  //border: 1px solid black;
   padding: 1rem;
   @include medium {
     margin-inline: 5vh;
@@ -13,12 +12,11 @@
   }
 
   @include x-large {
-    margin-inline: 45vh;
+    margin-inline: 55vh;
   }
 
   .grid-container {
     display: grid;
-    //border: 1px solid black;
   }
 
   .grid-container--form {
@@ -118,7 +116,6 @@
 
       .score {
         grid-area: score;
-        //border: 1px solid black;
         display: flex;
         place-items: center;
         color: $Moderate-blue;
@@ -266,7 +263,6 @@
   }
 
   .user-container {
-    //background-color: lightcoral;
     min-width: 100%;
     grid-area: form;
     .form {
