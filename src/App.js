@@ -3,23 +3,6 @@ import Comment from "./components/comment";
 import FormControl from "./components/formControl";
 
 function App() {
-  // const getData = async () => {
-  //   const resp = await fetch("./data.json");
-  //   const data = await resp.json();
-  //   window.datas = data.comments;
-  // };
-  // useEffect(() => {
-  //   getData();
-  // }, []);
-  // const getLocalStorage = () => {
-  //   let comment = localStorage.getItem("comment");
-  //   if (comment.length > 0) {
-  //     return JSON.parse(localStorage.getItem("comment"));
-  //   } else {
-  //     return window.datas;
-  //   }
-  // };
-
   const [comment, setComment] = useState(
     JSON.parse(localStorage.getItem("comment")) ?? []
   );
@@ -30,11 +13,7 @@ function App() {
     const data = await resp.json();
     setComment(data.comments);
     setCurrentUser(data.currentUser);
-    //console.log(data.comments);
-    //console.log(currentUser);
   };
-
-  //console.log(comment);
 
   useEffect(() => {
     if (comment.length === 0) {
@@ -110,15 +89,12 @@ function App() {
         if (item.id === parentId) {
           newReply = item.replies.filter((item) => item.id !== id);
           item.replies = newReply;
-          //console.log(id, type, parentId);
         }
       });
     }
 
     setComment(newComment);
   };
-
-  //console.log(comment);
 
   return (
     <section className="app">

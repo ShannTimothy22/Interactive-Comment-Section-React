@@ -12,7 +12,6 @@ import { useEffect } from "react";
 const Comment = ({
   comments,
   updateScore,
-  addComment,
   addReply,
   editComment,
   deleteComment,
@@ -24,7 +23,6 @@ const Comment = ({
   const [content, setContent] = useState(comments.content);
   const [isEditing, setIsEditing] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
-  //console.log(comments);
 
   const createdAt = new Date(comments.createdAt);
   const now = new Date();
@@ -58,7 +56,6 @@ const Comment = ({
 
   useEffect(() => {
     setTime(commentPostTime(timeDiff));
-    //console.log(time);
   }, [timeDiff]);
 
   const updateReply = (newReply) => {
@@ -76,7 +73,6 @@ const Comment = ({
     const finalType = type !== undefined ? type : "comment";
     const finalId = id !== undefined ? id : comments.id;
     deleteComment(finalId, finalType, comments.id);
-    //console.log(id, type);
   };
 
   const plusScore = () => {
@@ -96,8 +92,6 @@ const Comment = ({
       setVoted(false);
     }
   };
-
-  //console.log(comments.currentUser);
 
   return (
     <>

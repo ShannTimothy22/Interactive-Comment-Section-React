@@ -8,7 +8,6 @@ const ReplyContainer = ({
   editComment,
   deleteComment,
 }) => {
-  //console.log(comments);
   return (
     <div className="reply-container">
       {comments.map((comment) => {

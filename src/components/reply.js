@@ -21,8 +21,6 @@ const Reply = ({
   const [content, setContent] = useState(comments.content);
   const [isEditing, setIsEditing] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
-  //console.log(comments);
-  //console.log(comments.replyingTo);
 
   const createdAt = new Date(comments.createdAt);
   const now = new Date();
@@ -56,7 +54,6 @@ const Reply = ({
 
   useEffect(() => {
     setTime(commentPostTime(timeDiff));
-    //console.log(time);
   }, [timeDiff]);
 
   const updateComment = () => {
@@ -67,7 +64,6 @@ const Reply = ({
   const removeReply = () => {
     deleteComment(comments.id, "reply");
     setDeleteModal(false);
-    //console.log(comments.id);
   };
 
   const plusScore = () => {
