@@ -97,7 +97,7 @@ function App() {
   };
 
   return (
-    <section className="app">
+    <main className="app">
       <div className="main-container">
         {comment.map((comments) => {
           return (
@@ -120,7 +120,7 @@ function App() {
           currentUser={currentUser}
         />
       </div>
-    </section>
+    </main>
   );
 }
 

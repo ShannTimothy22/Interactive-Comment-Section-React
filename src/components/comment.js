@@ -113,7 +113,7 @@ const Comment = ({
             <span>
               <img src={reply} alt="reply" />
             </span>
-            <h3>Reply</h3>
+            <p>Reply</p>
           </button>
           <button
             className={`${comments.currentUser ? "" : "display--none"}`}
@@ -122,7 +122,7 @@ const Comment = ({
             <span>
               <img src={edit} alt="edit" />
             </span>
-            <h3>Edit</h3>
+            <p>Edit</p>
           </button>
           <button
             className={`${comments.currentUser ? "" : "display--none"}`}
@@ -133,7 +133,7 @@ const Comment = ({
             <span>
               <img src={deletes} alt="delete" />
             </span>
-            <h3>Delete</h3>
+            <p>Delete</p>
           </button>
         </div>
         <div className="info">
