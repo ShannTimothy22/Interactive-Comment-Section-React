@@ -58,7 +58,6 @@
         }
         @include large {
           font-size: 24px;
-          margin-bottom: 1.5rem;
         }
 
         .profile-pic {
@@ -154,7 +153,6 @@
             font-size: 15px;
           }
           @include large {
-            margin-bottom: 1.5rem;
             line-height: 1.5;
             font-size: 24px;
           }

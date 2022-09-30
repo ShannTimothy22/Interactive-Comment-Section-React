@@ -77,7 +77,6 @@ button {
 @media (min-width: 1440px) {
   .app .main-container .comment-container .info {
     font-size: 24px;
-    margin-bottom: 1.5rem;
   }
 }
 .app .main-container .comment-container .info .profile-pic {
@@ -192,7 +191,6 @@ button {
 }
 @media (min-width: 1440px) {
   .app .main-container .comment-container .comment p {
-    margin-bottom: 1.5rem;
     line-height: 1.5;
     font-size: 24px;
   }
