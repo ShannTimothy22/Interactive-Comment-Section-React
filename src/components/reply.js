@@ -107,7 +107,7 @@ const Reply = ({
             onClick={() => setIsReplying(!isReplying)}
           >
             <span>
-              <img src={reply} alt="reply" />
+              <img src={reply} alt="replies" />
             </span>
             Reply
           </button>
@@ -116,7 +116,7 @@ const Reply = ({
             onClick={() => setIsEditing(!isEditing)}
           >
             <span>
-              <img src={edit} alt="edit" />
+              <img src={edit} alt="edits" />
             </span>
             Edit
           </button>
@@ -127,7 +127,7 @@ const Reply = ({
             }}
           >
             <span>
-              <img src={deletes} alt="delete" />
+              <img src={deletes} alt="deletes" />
             </span>
             Delete
           </button>
