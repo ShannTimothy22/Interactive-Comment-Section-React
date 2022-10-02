@@ -111,18 +111,18 @@ const Comment = ({
             onClick={() => setIsReplying(!isReplying)}
           >
             <span>
-              <img src={reply} alt="reply" />
+              <img src={reply} alt="replies" />
             </span>
-            <p>Reply</p>
+            Reply
           </button>
           <button
             className={`${comments.currentUser ? "" : "display--none"}`}
             onClick={() => setIsEditing(!isEditing)}
           >
             <span>
-              <img src={edit} alt="edit" />
+              <img src={edit} alt="edits" />
             </span>
-            <p>Edit</p>
+            Edit
           </button>
           <button
             className={`${comments.currentUser ? "" : "display--none"}`}
@@ -131,9 +131,9 @@ const Comment = ({
             }}
           >
             <span>
-              <img src={deletes} alt="delete" />
+              <img src={deletes} alt="deletes" />
             </span>
-            <p>Delete</p>
+            Delete
           </button>
         </div>
         <div className="info">

@@ -40,8 +40,7 @@ const FormControl = ({ addComment, type, replyingTo }) => {
         {alert && <Alert removeAlert={removeAlert}></Alert>}
         <img className="profile" src={profile} alt="profile" />
         <textarea
-          name=""
-          id=""
+          name="text-area"
           cols="30"
           rows="10"
           placeholder="Add a comment..."
